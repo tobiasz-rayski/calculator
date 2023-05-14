@@ -54,6 +54,7 @@ button {
 #display {
   font-size: 3rem;
   line-height: 1;
+  font-weight: 500;
   color: var(--neutral);
 }
 
