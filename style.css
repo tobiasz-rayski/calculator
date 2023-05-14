@@ -1,0 +1,17 @@
+:root {
+  --primary: #488dff;
+  --secondary: #032859;
+  --neutral: #f1f1e6;
+  --black: #010812;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background-color: var(--neutral);
+  color: var(--black);
+  font-family: "DM Sans", sans-serif;
+}
