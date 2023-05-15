@@ -75,6 +75,7 @@ const numberButtons = document.querySelectorAll(".number");
 const display = document.getElementById("display");
 const resetButton = document.getElementById("reset");
 const addButton = document.getElementById("add");
+const equalsButton = document.getElementById("equals");
 const buttons = document.querySelectorAll("button");
 
 function resetEverything() {
@@ -87,20 +88,28 @@ function resetEverything() {
 
 function resetOperators() {
   for (let key in operators) {
-    key.active = false;
+    operators[key].active = false;
   }
 }
 
 function operatorsFalse() {
   for (let key in operators) {
-    if (operators[key].active == true) {
+    if (operators[key].active === true) {
       return false;
     }
-    return true;
   }
+  return true;
 }
 
-function calculate() {}
+function calculate() {
+  value_2 = parseFloat(displayValue);
+  for (let key in operators) {
+    if (operators[key].active === true) {
+      displayValue = operators[key].calculate();
+      display.textContent = displayValue;
+    }
+  }
+}
 
 numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -118,3 +127,5 @@ addButton.addEventListener("click", () => {
     displayValue = "";
   }
 });
+
+equalsButton.addEventListener("click", calculate);

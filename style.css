@@ -84,5 +84,5 @@ button:active {
   align-items: flex-end;
   border-radius: 0.5rem;
   padding: 0.5rem;
-  box-shadow: inset 1px 1px 1px;
+  box-shadow: inset 1px 1px 1px #454864;
 }
