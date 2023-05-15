@@ -73,6 +73,7 @@ let operators = {
 
 const numberButtons = document.querySelectorAll(".number");
 const display = document.getElementById("display");
+const resetButton = document.getElementById("reset");
 
 numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -80,3 +81,19 @@ numberButtons.forEach((button) => {
     display.textContent = displayValue;
   });
 });
+
+resetButton.addEventListener("click", resetEverything);
+
+function resetEverything() {
+  value_1 = 0;
+  value_2 = 0;
+  displayValue = "";
+  display.textContent = "";
+  resetOperators();
+}
+
+function resetOperators() {
+  for (let key in operators) {
+    key.active = false;
+  }
+}
