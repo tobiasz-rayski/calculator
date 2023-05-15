@@ -36,3 +36,37 @@
 //      empty string
 //      update display
 //      booleans to false
+
+let displayValue = "";
+let value_1 = 0;
+let value_2 = 0;
+
+let operators = {
+  add: {
+    active: false,
+    calculate: () => {
+      return value_1 + value_2;
+    },
+  },
+
+  subtract: {
+    active: false,
+    calculate: () => {
+      return value_1 - value_2;
+    },
+  },
+
+  multiply: {
+    active: false,
+    calculate: () => {
+      return value_1 * value_2;
+    },
+  },
+
+  divide: {
+    active: false,
+    calculate: () => {
+      return value_1 / value_2;
+    },
+  },
+};
