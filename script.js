@@ -74,15 +74,8 @@ let operators = {
 const numberButtons = document.querySelectorAll(".number");
 const display = document.getElementById("display");
 const resetButton = document.getElementById("reset");
-
-numberButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    displayValue += button.textContent;
-    display.textContent = displayValue;
-  });
-});
-
-resetButton.addEventListener("click", resetEverything);
+const addButton = document.getElementById("add");
+const buttons = document.querySelectorAll("button");
 
 function resetEverything() {
   value_1 = 0;
@@ -97,3 +90,31 @@ function resetOperators() {
     key.active = false;
   }
 }
+
+function operatorsFalse() {
+  for (let key in operators) {
+    if (operators[key].active == true) {
+      return false;
+    }
+    return true;
+  }
+}
+
+function calculate() {}
+
+numberButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    displayValue += button.textContent;
+    display.textContent = displayValue;
+  });
+});
+
+resetButton.addEventListener("click", resetEverything);
+
+addButton.addEventListener("click", () => {
+  if (operatorsFalse) {
+    operators.add.active = true;
+    value_1 = parseFloat(displayValue);
+    displayValue = "";
+  }
+});

@@ -33,6 +33,11 @@ button {
   padding: 0.25rem 0.5rem;
   cursor: pointer;
   background-color: #e5e6ed;
+  box-shadow: 1px 1px 1px #9d9da3;
+}
+
+button:active {
+  transform: translate(1px, 1px);
 }
 
 #container-main {
@@ -79,4 +84,5 @@ button {
   align-items: flex-end;
   border-radius: 0.5rem;
   padding: 0.5rem;
+  box-shadow: inset 1px 1px 1px;
 }
