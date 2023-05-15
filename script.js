@@ -119,6 +119,8 @@ function calculate() {
     if (operators[key].active === true) {
       displayValue = operators[key].calculate();
       display.textContent = displayValue;
+      value_1 = parseFloat(displayValue);
+      displayValue = "";
     }
   }
 }
