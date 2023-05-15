@@ -1,42 +1,3 @@
-// Declare string variable (display)
-// Declare two variables for calculations
-// Declare object with booleans (operators)
-//
-// Number pressed
-//    add value to string (display) variable
-//    update display
-//
-// Operator pressed
-//    if all operators are false
-//    switch appropriate boolean value to true
-//    add string value to a variable for calculations
-//    reset string value
-//
-//    if an operator is true
-//    switch true operator to false
-//    switch appropriate operator to true
-//
-//    if an operator is true
-//    and string is not empty
-//    switch true operator to false
-//    switch appropriate operator to true
-//    -> Equals
-//
-// Number pressed
-//
-// ...
-//
-// Equals pressed
-//    add current string (display) value to second variable (for calculations)
-//    check for boolean, if true then run appropriate func
-//    add result to string (display) and update display (round to .##)
-//
-// Reset Calculator
-//      change variables to 0
-//      empty string
-//      update display
-//      booleans to false
-
 let displayValue = "";
 let value_1 = 0;
 let value_2 = 0;
@@ -75,6 +36,9 @@ const numberButtons = document.querySelectorAll(".number");
 const display = document.getElementById("display");
 const resetButton = document.getElementById("reset");
 const addButton = document.getElementById("add");
+const subtractButton = document.getElementById("subtract");
+const multiplyButton = document.getElementById("multiply");
+const divideButton = document.getElementById("divide");
 const equalsButton = document.getElementById("equals");
 const buttons = document.querySelectorAll("button");
 
@@ -110,6 +74,9 @@ function check(operator) {
     resetOperators();
     operators[operator].active = true;
     calculate();
+  } else {
+    resetOperators();
+    operators[operator].active = true;
   }
 }
 
@@ -138,4 +105,27 @@ addButton.addEventListener("click", () => {
   check("add");
 });
 
+subtractButton.addEventListener("click", () => {
+  check("subtract");
+});
+
+multiplyButton.addEventListener("click", () => {
+  check("multiply");
+});
+
+divideButton.addEventListener("click", () => {
+  check("divide");
+});
+
 equalsButton.addEventListener("click", calculate);
+
+document.addEventListener("keydown", function (event) {
+  const key = event.key;
+
+  numberButtons.forEach(function (button) {
+    if (button.textContent === key) {
+      displayValue += button.textContent;
+      display.textContent = displayValue;
+    }
+  });
+});
