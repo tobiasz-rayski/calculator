@@ -101,6 +101,18 @@ function operatorsFalse() {
   return true;
 }
 
+function check(operator) {
+  if (operatorsFalse()) {
+    operators[operator].active = true;
+    value_1 = parseFloat(displayValue);
+    displayValue = "";
+  } else if (operatorsFalse() === false && displayValue !== "") {
+    resetOperators();
+    operators[operator].active = true;
+    calculate();
+  }
+}
+
 function calculate() {
   value_2 = parseFloat(displayValue);
   for (let key in operators) {
@@ -121,11 +133,7 @@ numberButtons.forEach((button) => {
 resetButton.addEventListener("click", resetEverything);
 
 addButton.addEventListener("click", () => {
-  if (operatorsFalse) {
-    operators.add.active = true;
-    value_1 = parseFloat(displayValue);
-    displayValue = "";
-  }
+  check("add");
 });
 
 equalsButton.addEventListener("click", calculate);
