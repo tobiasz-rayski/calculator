@@ -12,6 +12,7 @@
 body,
 html {
   background-color: #f8f8f8;
+  height: 80vh;
   color: var(--black);
   font-family: "DM Sans", sans-serif;
   display: flex;
@@ -77,5 +78,5 @@ button {
   justify-content: flex-end;
   align-items: flex-end;
   border-radius: 0.5rem;
-  padding: 0.25rem;
+  padding: 0.5rem;
 }

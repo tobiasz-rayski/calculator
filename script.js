@@ -70,3 +70,13 @@ let operators = {
     },
   },
 };
+
+const numberButtons = document.querySelectorAll(".number");
+const display = document.getElementById("display");
+
+numberButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    displayValue += button.textContent;
+    display.textContent = displayValue;
+  });
+});
