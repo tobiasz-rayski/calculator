@@ -7,10 +7,20 @@
 //    update display
 //
 // Operator pressed
-//    reset booleans
+//    if all operators are false
+//    switch appropriate boolean value to true
 //    add string value to a variable for calculations
-//    reset string (display) value
-//    switch boolean value
+//    reset string value
+//
+//    if an operator is true
+//    switch true operator to false
+//    switch appropriate operator to true
+//
+//    if an operator is true
+//    and string is not empty
+//    switch true operator to false
+//    switch appropriate operator to true
+//    -> Equals
 //
 // Number pressed
 //
@@ -20,3 +30,9 @@
 //    add current string (display) value to second variable (for calculations)
 //    check for boolean, if true then run appropriate func
 //    add result to string (display) and update display (round to .##)
+//
+// Reset Calculator
+//      change variables to 0
+//      empty string
+//      update display
+//      booleans to false
